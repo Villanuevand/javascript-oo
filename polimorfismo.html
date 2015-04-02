@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Polimorfismo</title>
+</head>
+(
+<script src="js/miapp.js"></script>
+<script src="js/pantalla.js"></script>
+<script src="js/pantalla_menu.js"></script>
+<script src="js/pantalla_detalle.js"></script>
+<script type="text/javascript">
+    var app = new MiApp();
+    app.inicializar();
+
+    console.log(app);
+    console.log(app.pantallaActual);
+
+    app.actualizarPantalla(MiApp.PANTALLA_DETALLE);
+    console.log(app.pantallaActual);
+</script>
+<body>
+
+</body>
+</html>
