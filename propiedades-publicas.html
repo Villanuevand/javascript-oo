@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Propiedades Públicas</title>
+    <script type="text/javascript">
+        function Persona(dni,nombre){
+            /**
+             * this : Propiedad Publica
+             */
+            this.dni = dni;
+            this.nombre = nombre;
+        }
+
+        var yo = new Persona('17537106','Andres');
+        var tu = new Persona('18568846','Itsys');
+
+        yo.dni = '17537106';
+        yo.nombre = 'Andres';
+        tu.dni = '18568846';
+        tu.nombre = 'Itsys';
+
+        tu['nombre'] = 'Otro';
+
+        console.log(yo);
+        console.log(tu);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
