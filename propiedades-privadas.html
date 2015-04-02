@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Propiedades Privadas</title>
+
+    <script>
+        function Persona (dni, nombre) {
+            // Propiedad publica
+            var  edad = 0;
+
+            this.dni = dni;
+            this.nombre = nombre;
+        }
+
+        var yo = new Persona('1','Andres');
+        console.log(yo.edad);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
