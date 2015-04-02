@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Métodos Publicos</title>
+    <script type="text/javascript">
+        function Persona(dni,nombre){
+
+            this.dni = dni;
+            this.nombre = nombre;
+        }
+
+        Persona.prototype.saludar = function(nombre){
+            console.log(this.nombre + ' te saluda ' + nombre);
+        }
+
+        var yo = new Persona('1','Andres');
+        yo.dni = '1234567';
+        yo.saludar('Pepito');
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
