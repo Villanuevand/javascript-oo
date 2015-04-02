@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Prototipos</title>
+</head>
+<script type="text/javascript">
+    function Persona(dni, nombre){
+        this.dni = dni;
+        this.nombre = nombre;
+        // La propiedad del constuctor tiene prioridad
+        this.numeroPiernas = 2;
+
+    }
+
+    Persona.prototype.saludar = function(){
+        console.log('Hola me llamo '+this.nombre);
+    }
+
+    var yo = new Persona('123456','Andres');
+    var tu = new Persona('789012','Itsys');
+
+    // Método
+    Persona.prototype.prueba = function () {
+
+    };
+
+    Persona.prototype.numeroPiernas = 2;
+    Persona.prototype.numeroPiernas = 3;
+    console.log(yo);
+    console.log(tu);
+
+
+
+    yo.saludar();
+    tu.saludar();
+</script>
+<body>
+
+</body>
+</html>
