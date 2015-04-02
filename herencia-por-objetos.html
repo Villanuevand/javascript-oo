@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Herencia por Objetos</title>
+</head>
+<script type="text/javascript">
+
+   var persona = {
+       _dni : '',
+       _nombre : '',
+       _amigos : null,
+       init : function (dni, nombre) {
+           this._dni = dni;
+           this._nombre = nombre;
+           this._amigos = new Array();
+           return this;
+       },
+       saludar : function () {
+           console.log('Hola me llamo '+this.nombre);
+       }
+   };
+
+    var estudiante = Object.create(persona,{
+        numeroMatricula : {
+            get : function () {
+                return this.value;
+            },
+            set : function (newValue) {
+                this.value = newValue;
+            }
+        },
+        init : {
+            value : function(dni, nombre, numeroMatricula){
+                persona.init.call(this, dni, nombre);
+                this.numeroMatricula = numeroMatricula;
+                return this;
+            }
+        },
+        estudiar : {
+            value : function () {
+                console.log('estudiando > '+ this.numeroMatricula);
+            }
+        }
+    });
+    estudiante.numeroMatricula  = '';
+    estudiante.init = function(dni, nombre, numeroMatricula){
+        persona.init.call(this, dni, nombre);
+        this._numeroMatricula = numeroMatricula;
+
+        return this;
+    }
+
+    estudiante.estudiar = function(){
+        console.log('Estudiando > '+ this._numeroMatricula);
+    }
+
+    var yo = Object.create(estudiante).init('1','Marcos','12');
+    yo.saludar();
+    yo.numeroMatricula = '54';
+    yo.estudiar();
+
+</script>
+<body>
+
+</body>
+</html>
